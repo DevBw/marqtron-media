@@ -50,16 +50,11 @@
     <link rel="dns-prefetch" href="//readdy.ai">
     
     <!-- Critical Resource Preloading -->
-    <link rel="preload" href="/shared.js" as="script">
     <link rel="preload" href="/script.js" as="script">
-    <link rel="preload" href="/enhanced-navigation.js" as="script">
     
     <!-- External Resources -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="styles.min.css">
-    <link rel="stylesheet" href="enhanced-styles.css">
-    <link rel="stylesheet" href="layout-fixes.css">
-    <link rel="stylesheet" href="carousel-override.css">
+    <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
     <!-- Structured Data for SEO -->
@@ -131,8 +126,7 @@
                 "provider": {
                     "@id": "https://marqtronmedia.com/#organization"
                 },
-                "serviceType": "SEO Optimization",
-                "url": "https://marqtronmedia.com/seo-services.html"
+                "serviceType": "SEO Optimization"
             },
             {
                 "@type": "Service",
@@ -141,8 +135,7 @@
                 "provider": {
                     "@id": "https://marqtronmedia.com/#organization"
                 },
-                "serviceType": "Social Media Management",
-                "url": "https://marqtronmedia.com/social-media-marketing.html"
+                "serviceType": "Social Media Management"
             },
             {
                 "@type": "Service",
@@ -151,8 +144,7 @@
                 "provider": {
                     "@id": "https://marqtronmedia.com/#organization"
                 },
-                "serviceType": "Content Strategy",
-                "url": "https://marqtronmedia.com/content-marketing.html"
+                "serviceType": "Content Strategy"
             },
             {
                 "@type": "Service",
@@ -161,8 +153,7 @@
                 "provider": {
                     "@id": "https://marqtronmedia.com/#organization"
                 },
-                "serviceType": "Web Development",
-                "url": "https://marqtronmedia.com/web-design-development.html"
+                "serviceType": "Web Development"
             },
             {
                 "@type": "Service",
@@ -171,8 +162,7 @@
                 "provider": {
                     "@id": "https://marqtronmedia.com/#organization"
                 },
-                "serviceType": "Graphic Design",
-                "url": "https://marqtronmedia.com/digital-graphic-design.html"
+                "serviceType": "Graphic Design"
             }
         ]
     }
@@ -201,35 +191,35 @@
                                 Services <i class="fas fa-chevron-down"></i>
                             </a>
                             <div class="dropdown-menu">
-                                <a href="seo-services.html" class="dropdown-link">
+                                <a href="#services" onclick="scrollToSection('services')" class="dropdown-link">
                                     <i class="fas fa-search"></i>
                                     <div>
                                         <strong>SEO Services</strong>
                                         <span>Boost your search rankings</span>
                                     </div>
                                 </a>
-                                <a href="content-marketing.html" class="dropdown-link">
+                                <a href="#services" onclick="scrollToSection('services')" class="dropdown-link">
                                     <i class="fas fa-pen-fancy"></i>
                                     <div>
                                         <strong>Content Marketing</strong>
                                         <span>Engage your audience</span>
                                     </div>
                                 </a>
-                                <a href="social-media-marketing.html" class="dropdown-link">
+                                <a href="#services" onclick="scrollToSection('services')" class="dropdown-link">
                                     <i class="fas fa-share-alt"></i>
                                     <div>
                                         <strong>Social Media Marketing</strong>
                                         <span>Amplify your brand</span>
                                     </div>
                                 </a>
-                                <a href="web-design-development.html" class="dropdown-link">
+                                <a href="#services" onclick="scrollToSection('services')" class="dropdown-link">
                                     <i class="fas fa-code"></i>
                                     <div>
                                         <strong>Web Design & Development</strong>
                                         <span>Beautiful, functional websites</span>
                                     </div>
                                 </a>
-                                <a href="digital-graphic-design.html" class="dropdown-link">
+                                <a href="#services" onclick="scrollToSection('services')" class="dropdown-link">
                                     <i class="fas fa-palette"></i>
                                     <div>
                                         <strong>Digital Graphic Design</strong>
@@ -269,19 +259,19 @@
                         </a>
                         <div class="mobile-services-section">
                             <span class="mobile-section-title">Our Services</span>
-                            <a href="seo-services.html" class="nav-link">
+                            <a href="#services" onclick="scrollToSection('services')" class="nav-link">
                                 <i class="fas fa-search"></i> SEO Services
                             </a>
-                            <a href="content-marketing.html" class="nav-link">
+                            <a href="#services" onclick="scrollToSection('services')" class="nav-link">
                                 <i class="fas fa-pen-fancy"></i> Content Marketing
                             </a>
-                            <a href="social-media-marketing.html" class="nav-link">
+                            <a href="#services" onclick="scrollToSection('services')" class="nav-link">
                                 <i class="fas fa-share-alt"></i> Social Media Marketing
                             </a>
-                            <a href="web-design-development.html" class="nav-link">
+                            <a href="#services" onclick="scrollToSection('services')" class="nav-link">
                                 <i class="fas fa-code"></i> Web Design & Development
                             </a>
-                            <a href="digital-graphic-design.html" class="nav-link">
+                            <a href="#services" onclick="scrollToSection('services')" class="nav-link">
                                 <i class="fas fa-palette"></i> Digital Graphic Design
                             </a>
                         </div>
@@ -445,8 +435,8 @@
                                         <span>First Page Rankings</span>
                                     </div>
                                 </div>
-                                <a href="seo-services.html" class="service-link">
-                                    Explore SEO Services <i class="fas fa-arrow-right"></i>
+                                <a href="#contact" onclick="scrollToSection('contact')" class="service-link">
+                                    Get Started <i class="fas fa-arrow-right"></i>
                                 </a>
                             </div>
                         </div>
@@ -468,7 +458,7 @@
                                     <span class="feature-tag">Blog Content</span>
                                     <span class="feature-tag">Social Media</span>
                                 </div>
-                                <a href="content-marketing.html" class="service-link">
+                                <a href="#contact" onclick="scrollToSection('contact')" class="service-link">
                                     Learn More <i class="fas fa-arrow-right"></i>
                                 </a>
                             </div>
@@ -491,7 +481,7 @@
                                     <span class="feature-tag">Strategy</span>
                                     <span class="feature-tag">Management</span>
                                 </div>
-                                <a href="social-media-marketing.html" class="service-link">
+                                <a href="#contact" onclick="scrollToSection('contact')" class="service-link">
                                     Discover More <i class="fas fa-arrow-right"></i>
                                 </a>
                             </div>
@@ -510,7 +500,7 @@
                                 <p class="service-description">
                                     Custom websites that convert visitors into customers with beautiful, functional designs.
                                 </p>
-                                <a href="web-design-development.html" class="service-link">
+                                <a href="#contact" onclick="scrollToSection('contact')" class="service-link">
                                     View Projects <i class="fas fa-arrow-right"></i>
                                 </a>
                             </div>
@@ -529,7 +519,7 @@
                                 <p class="service-description">
                                     Visual identity and branding that makes your business stand out from the competition.
                                 </p>
-                                <a href="digital-graphic-design.html" class="service-link">
+                                <a href="#contact" onclick="scrollToSection('contact')" class="service-link">
                                     See Designs <i class="fas fa-arrow-right"></i>
                                 </a>
                             </div>
@@ -959,7 +949,7 @@
                             <p class="portfolio-description">
                                 Comprehensive SEO strategies to improve your search rankings and drive organic traffic to your website.
                             </p>
-                            <a href="seo-services.html" class="portfolio-link">
+                            <a href="#contact" onclick="scrollToSection('contact')" class="portfolio-link">
                                 Learn More <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
@@ -975,7 +965,7 @@
                             <p class="portfolio-description">
                                 Engage your audience and build brand awareness across all major social media platforms.
                             </p>
-                            <a href="social-media-marketing.html" class="portfolio-link">
+                            <a href="#contact" onclick="scrollToSection('contact')" class="portfolio-link">
                                 Discover More <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
@@ -991,7 +981,7 @@
                             <p class="portfolio-description">
                                 Create compelling content that tells your brand story and converts visitors into customers.
                             </p>
-                            <a href="content-marketing.html" class="portfolio-link">
+                            <a href="#contact" onclick="scrollToSection('contact')" class="portfolio-link">
                                 Explore Content <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
@@ -1007,7 +997,7 @@
                             <p class="portfolio-description">
                                 Professional websites that look great, load fast, and convert visitors into customers.
                             </p>
-                            <a href="web-design-development.html" class="portfolio-link">
+                            <a href="#contact" onclick="scrollToSection('contact')" class="portfolio-link">
                                 View Web Services <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
@@ -1023,7 +1013,7 @@
                             <p class="portfolio-description">
                                 Professional visual identity and marketing materials that make your brand stand out.
                             </p>
-                            <a href="digital-graphic-design.html" class="portfolio-link">
+                            <a href="#contact" onclick="scrollToSection('contact')" class="portfolio-link">
                                 See Design Work <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
@@ -1295,7 +1285,7 @@
                         <h3 class="footer-title">Our Services</h3>
                         <ul class="footer-links">
                             <li><a href="#">SEO</a></li>
-                            <li><a href="social-media-marketing.html">Social Media Marketing</a></li>
+                            <li><a href="#services" onclick="scrollToSection('services')">Social Media Marketing</a></li>
                             <li><a href="#">Content Marketing</a></li>
                             <li><a href="#">Web Design & Development</a></li>
                             <li><a href="#">Digital Graphic Design</a></li>
@@ -1348,48 +1338,7 @@
         <!-- Content will be similar but focused on social media services -->
     </div>
 
-    <!-- Core Scripts - Deferred for optimal loading -->
-    <script src="shared.js" defer></script>
+    <!-- Core Scripts -->
     <script src="script.js" defer></script>
-    <script src="enhanced-navigation.js" defer></script>
-    
-    <!-- Carousel functionality now handled by enhanced-navigation.js -->
-    
-    <!-- Production Optimizations - Async for non-blocking -->
-    <script src="performance.js" async></script>
-    <script src="analytics.js" async></script>
-    
-    <!-- Service Worker Registration -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
-                    .then(registration => console.log('SW registered'))
-                    .catch(error => console.log('SW registration failed'));
-            });
-        }
-    </script>
-    
-    <!-- Performance Monitoring -->
-    <script>
-        // Critical performance metrics
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                const navigation = performance.getEntriesByType('navigation')[0];
-                const loadTime = navigation.loadEventEnd - navigation.fetchStart;
-                
-                // Send to analytics if available
-                if (window.gtag) {
-                    gtag('event', 'page_load_time', {
-                        event_category: 'Performance',
-                        value: Math.round(loadTime),
-                        non_interaction: true
-                    });
-                }
-                
-                console.log(`Page load time: ${loadTime}ms`);
-            }, 0);
-        });
-    </script>
 </body>
 </html> 
