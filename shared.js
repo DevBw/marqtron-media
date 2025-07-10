@@ -839,20 +839,21 @@ function initializePerformanceMonitoring() {
                 
                 // Log performance metrics (replace with actual analytics)
                 // Only log in development
-            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-                console.log('Performance Metrics:', {
-                    loadTime: Math.round(loadTime),
-                    domContentLoaded: Math.round(domContentLoaded),
-                    firstPaint: performance.getEntriesByType('paint')[0]?.startTime,
-                    firstContentfulPaint: performance.getEntriesByType('paint')[1]?.startTime
-                });
-                
-                // Track Core Web Vitals
-                if ('web-vitals' in window) {
-                    // Implementation would use web-vitals library
-                    // getCLS(sendToAnalytics);
-                    // getFID(sendToAnalytics);
-                    // getLCP(sendToAnalytics);
+                if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                    console.log('Performance Metrics:', {
+                        loadTime: Math.round(loadTime),
+                        domContentLoaded: Math.round(domContentLoaded),
+                        firstPaint: performance.getEntriesByType('paint')[0]?.startTime,
+                        firstContentfulPaint: performance.getEntriesByType('paint')[1]?.startTime
+                    });
+                    
+                    // Track Core Web Vitals
+                    if ('web-vitals' in window) {
+                        // Implementation would use web-vitals library
+                        // getCLS(sendToAnalytics);
+                        // getFID(sendToAnalytics);
+                        // getLCP(sendToAnalytics);
+                    }
                 }
             }
         });
