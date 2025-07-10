@@ -592,6 +592,112 @@ img {
 }
 
 /* ========================================
+   WHO WE SERVE SECTION
+   ======================================== */
+.serve-grid {
+  display: grid;
+  gap: var(--space-8);
+  margin-top: var(--space-12);
+}
+
+@media (min-width: 768px) {
+  .serve-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .serve-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.serve-card {
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  text-align: center;
+  border: 2px solid transparent;
+}
+
+.serve-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
+}
+
+.serve-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-6);
+  color: var(--text-white);
+  font-size: var(--text-xl);
+}
+
+.serve-card h3 {
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--space-4);
+  color: var(--text-primary);
+}
+
+.serve-card p {
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+  margin-bottom: 0;
+}
+
+.serve-stats {
+  display: grid;
+  gap: var(--space-6);
+  margin-top: var(--space-16);
+  padding: var(--space-12);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  border-radius: var(--radius-xl);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .serve-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .serve-stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.stat-item {
+  color: var(--text-white);
+}
+
+.stat-number {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--space-2);
+  background: linear-gradient(45deg, #ffffff, #f0f0f0);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-label {
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+/* ========================================
    WHY CHOOSE US SECTION
    ======================================== */
 #why-choose-us {
