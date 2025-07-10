@@ -1702,3 +1702,95 @@ input:focus, select:focus, textarea:focus {
   background: var(--primary-color);
   color: var(--text-white);
 } 
+
+/* ========================================
+   APPROACH GRID (SEO Services)
+   ======================================== */
+.approach-grid {
+  display: grid;
+  gap: var(--space-8);
+  margin-top: var(--space-12);
+}
+
+@media (min-width: 768px) {
+  .approach-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .approach-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.approach-card {
+  background: var(--bg-primary);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  position: relative;
+}
+
+.approach-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  opacity: 0;
+  border-radius: var(--radius-xl);
+  transition: var(--transition);
+}
+
+.approach-card:hover::before {
+  opacity: 0.1;
+}
+
+.approach-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.approach-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-6);
+  color: var(--text-white);
+  font-size: var(--text-2xl);
+  transition: var(--transition);
+  position: relative;
+  z-index: 1;
+}
+
+.approach-card:hover .approach-icon {
+  transform: scale(1.1);
+}
+
+.approach-card h3 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--space-4);
+  color: var(--text-primary);
+  position: relative;
+  z-index: 1;
+}
+
+.approach-card:hover h3 {
+  color: var(--primary-color);
+}
+
+.approach-card p {
+  color: var(--text-secondary);
+  position: relative;
+  z-index: 1;
+}
