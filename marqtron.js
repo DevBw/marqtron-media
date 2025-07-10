@@ -25,11 +25,11 @@ function toggleMobileMenu() {
         // Close menu
         mobileMenu.classList.remove('active');
         icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
+        icon.classList.add('fa-bars-staggered');
     } else {
         // Open menu
         mobileMenu.classList.add('active');
-        icon.classList.remove('fa-bars');
+        icon.classList.remove('fa-bars-staggered');
         icon.classList.add('fa-times');
     }
 }
