@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeSmoothScrolling();
     initializeFormHandling();
     initializeHeaderScroll();
+    initializeHeroVideo();
     
     console.log('✅ All functionality loaded successfully');
 });
@@ -112,6 +113,45 @@ function initializeHeaderScroll() {
             ticking = true;
         }
     });
+}
+
+// ========================================
+// HERO VIDEO HANDLING
+// ========================================
+function initializeHeroVideo() {
+    const heroVideo = document.querySelector('.hero-video');
+    
+    if (heroVideo) {
+        console.log('🎥 Hero video element found');
+        
+        // Handle video load events
+        heroVideo.addEventListener('loadstart', function() {
+            console.log('📹 Video loading started');
+        });
+        
+        heroVideo.addEventListener('canplay', function() {
+            console.log('✅ Video can start playing');
+        });
+        
+        heroVideo.addEventListener('error', function(e) {
+            console.error('❌ Video error:', e);
+            console.log('Using fallback background');
+        });
+        
+        heroVideo.addEventListener('loadeddata', function() {
+            console.log('📺 Video data loaded');
+        });
+        
+        // Try to play the video if autoplay fails
+        const playPromise = heroVideo.play();
+        if (playPromise !== undefined) {
+            playPromise.catch(error => {
+                console.log('Autoplay prevented, video will play when user interacts');
+            });
+        }
+    } else {
+        console.log('❌ Hero video element not found');
+    }
 }
 
 // ========================================
