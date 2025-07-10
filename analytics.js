@@ -7,7 +7,7 @@
     // Configuration
     const config = {
         googleAnalytics: {
-            measurementId: 'G-XXXXXXXXXX', // Replace with actual GA4 Measurement ID
+            measurementId: 'G-XXXXXXXXXX', // TODO: Replace with actual GA4 Measurement ID before deployment
             enabled: true
         },
         googleTagManager: {

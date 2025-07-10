@@ -429,7 +429,8 @@ function handleFormSubmit(event) {
         if (typeof showNotification === 'function') {
             showNotification('Thank you for your inquiry! We will get back to you within 24 hours.', 'success');
         } else {
-            alert('Thank you for your inquiry! We will get back to you within 24 hours.');
+            // Fallback for when showNotification is not available
+            console.log('Thank you for your inquiry! We will get back to you within 24 hours.');
         }
         
         // Reset form
