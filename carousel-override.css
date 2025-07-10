@@ -1,0 +1,293 @@
+/* ========================================
+   CAROUSEL REFINED STYLES - Specificity-Based
+   Proper CSS cascade without !important overuse
+   Load this AFTER all other CSS files
+   ======================================== */
+
+/* SERVICES CAROUSEL - Enhanced Specificity */
+.services-carousel-container .services-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+}
+
+.services-carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    overflow: hidden;
+}
+
+.services-carousel-container .carousel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    min-width: auto;
+    height: 480px;
+    overflow: visible;
+    flex-wrap: nowrap;
+    position: relative;
+    transform: none;
+}
+
+/* PREMIUM CARDS - Proper Specificity */
+.services-carousel-container .carousel-wrapper .premium-card {
+    flex: 0 0 280px;
+    width: 280px;
+    height: 400px;
+    margin: 0 0.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    transform: scale(0.9);
+    opacity: 0.8;
+    z-index: 1;
+}
+
+/* CENTER CARD - Enhanced Specificity */
+.services-carousel-container .carousel-wrapper .premium-card.center {
+    flex: 0 0 320px;
+    width: 320px;
+    height: 450px;
+    transform: scale(1);
+    opacity: 1;
+    z-index: 3;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* SIDE CARDS */
+.services-carousel-container .carousel-wrapper .premium-card.side {
+    flex: 0 0 300px;
+    width: 300px;
+    height: 420px;
+    transform: scale(0.95);
+    opacity: 0.9;
+    z-index: 2;
+}
+
+/* FAR CARDS */
+.services-carousel-container .carousel-wrapper .premium-card.far {
+    flex: 0 0 260px;
+    width: 260px;
+    height: 380px;
+    transform: scale(0.85);
+    opacity: 0.7;
+    z-index: 1;
+}
+
+/* CARD CONTENT - Enhanced Specificity */
+.services-carousel-container .carousel-wrapper .premium-card .card-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+/* CARD IMAGES */
+.services-carousel-container .carousel-wrapper .premium-card .card-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    z-index: 1;
+}
+
+/* CARD OVERLAY */
+.services-carousel-container .carousel-wrapper .premium-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+    border-radius: 16px;
+    z-index: 2;
+}
+
+/* NAVIGATION BUTTONS */
+.services-carousel-container .carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.services-carousel-container .carousel-prev {
+    left: 10px;
+}
+
+.services-carousel-container .carousel-next {
+    right: 10px;
+}
+
+/* RESPONSIVE OPTIMIZATIONS */
+@media (max-width: 1200px) {
+    .services-carousel-container .carousel-wrapper {
+        gap: 0.5rem;
+    }
+    
+    .services-carousel-container .carousel-wrapper .premium-card {
+        flex: 0 0 260px;
+        width: 260px;
+        height: 380px;
+    }
+    
+    .services-carousel-container .carousel-wrapper .premium-card.center {
+        flex: 0 0 300px;
+        width: 300px;
+        height: 420px;
+    }
+    
+    .services-carousel-container .carousel-wrapper .premium-card.side {
+        flex: 0 0 280px;
+        width: 280px;
+        height: 400px;
+    }
+    
+    .services-carousel-container .carousel-wrapper .premium-card.far {
+        flex: 0 0 240px;
+        width: 240px;
+        height: 360px;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-carousel-container {
+        padding: 1rem 0.5rem;
+    }
+    
+    .services-carousel-container .carousel-wrapper {
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        gap: 1rem;
+        height: 380px;
+    }
+    
+    .services-carousel-container .carousel-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .services-carousel-container .carousel-wrapper .premium-card {
+        flex: 0 0 280px;
+        width: 280px;
+        height: 350px;
+        flex-shrink: 0;
+        scroll-snap-align: center;
+        transform: scale(1);
+        opacity: 1;
+        margin: 0 0.5rem;
+    }
+    
+    .services-carousel-container .carousel-wrapper .premium-card.center,
+    .services-carousel-container .carousel-wrapper .premium-card.side,
+    .services-carousel-container .carousel-wrapper .premium-card.far {
+        flex: 0 0 280px;
+        width: 280px;
+        height: 350px;
+        transform: scale(1);
+        opacity: 1;
+    }
+    
+    .services-carousel-container .carousel-nav {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-carousel-container .carousel-wrapper .premium-card {
+        flex: 0 0 250px;
+        width: 250px;
+        height: 320px;
+    }
+    
+    .services-carousel-container .carousel-wrapper .premium-card.center,
+    .services-carousel-container .carousel-wrapper .premium-card.side,
+    .services-carousel-container .carousel-wrapper .premium-card.far {
+        flex: 0 0 250px;
+        width: 250px;
+        height: 320px;
+    }
+}
+
+/* LAYOUT SAFETY - Only use !important for critical overrides */
+.services-carousel-container .carousel-wrapper .premium-card {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    float: none;
+    clear: none;
+    position: relative;
+}
+
+/* PERFORMANCE OPTIMIZATION */
+.services-carousel-container .carousel-wrapper {
+    contain: layout;
+}
+
+/* HOVER EFFECTS - Enhanced with specificity */
+.services-carousel-container .carousel-wrapper .premium-card:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    transform: scale(0.92);
+}
+
+.services-carousel-container .carousel-wrapper .premium-card.center:hover {
+    transform: scale(1.02);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2);
+}
+
+/* CRITICAL OVERRIDES - Keep minimal !important usage */
+.services-carousel-container .services-section {
+    transform: none !important;
+}
+
+.services-carousel-container * {
+    will-change: auto !important;
+}
+
+/* FORCED LAYOUT RESET - Essential !important only */
+body.carousel-active .services-carousel-container .carousel-wrapper .premium-card {
+    margin-left: 0.5rem !important;
+    margin-right: 0.5rem !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+} 

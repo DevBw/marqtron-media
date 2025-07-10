@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marqtron Media Components Library</title>
+</head>
+<body>
+
+<!-- ========================================
+     HEADER COMPONENT
+     ======================================== -->
+<template id="header-component">
+    <header id="header" class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html" class="logo-text" aria-label="Marqtron Media Homepage">
+                        <span class="brand-name">Marqtron</span> Media
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="nav desktop-nav" role="navigation" aria-label="Main navigation">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="index.html#about" class="nav-link">About</a>
+                    <div class="nav-dropdown">
+                        <a href="index.html#services" class="nav-link dropdown-trigger">
+                            Services <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="seo-services.html" class="dropdown-link">
+                                <i class="fas fa-search"></i>
+                                <div>
+                                    <strong>SEO Services</strong>
+                                    <span>Boost your search rankings</span>
+                                </div>
+                            </a>
+                            <a href="content-marketing.html" class="dropdown-link">
+                                <i class="fas fa-pen-fancy"></i>
+                                <div>
+                                    <strong>Content Marketing</strong>
+                                    <span>Engage your audience</span>
+                                </div>
+                            </a>
+                            <a href="social-media-marketing.html" class="dropdown-link">
+                                <i class="fas fa-share-alt"></i>
+                                <div>
+                                    <strong>Social Media Marketing</strong>
+                                    <span>Amplify your brand</span>
+                                </div>
+                            </a>
+                            <a href="web-design-development.html" class="dropdown-link">
+                                <i class="fas fa-code"></i>
+                                <div>
+                                    <strong>Web Design & Development</strong>
+                                    <span>Beautiful, functional websites</span>
+                                </div>
+                            </a>
+                            <a href="digital-graphic-design.html" class="dropdown-link">
+                                <i class="fas fa-palette"></i>
+                                <div>
+                                    <strong>Digital Graphic Design</strong>
+                                    <span>Visual identity & branding</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="index.html#portfolio" class="nav-link">Portfolio</a>
+                    <a href="index.html#team" class="nav-link">Team</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+                
+                <!-- CTA Button -->
+                <div class="header-cta desktop-only">
+                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <div class="mobile-menu-toggle">
+                    <button onclick="toggleMobileMenu()" class="menu-btn" aria-label="Toggle mobile menu">
+                        <i class="fas fa-bars" id="menuIcon"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="mobile-menu">
+                <div class="mobile-nav">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                    <a href="index.html#about" class="nav-link">
+                        <i class="fas fa-info-circle"></i> About
+                    </a>
+                    <div class="mobile-services-section">
+                        <span class="mobile-section-title">Our Services</span>
+                        <a href="seo-services.html" class="nav-link">
+                            <i class="fas fa-search"></i> SEO Services
+                        </a>
+                        <a href="content-marketing.html" class="nav-link">
+                            <i class="fas fa-pen-fancy"></i> Content Marketing
+                        </a>
+                        <a href="social-media-marketing.html" class="nav-link">
+                            <i class="fas fa-share-alt"></i> Social Media Marketing
+                        </a>
+                        <a href="web-design-development.html" class="nav-link">
+                            <i class="fas fa-code"></i> Web Design & Development
+                        </a>
+                        <a href="digital-graphic-design.html" class="nav-link">
+                            <i class="fas fa-palette"></i> Digital Graphic Design
+                        </a>
+                    </div>
+                    <a href="index.html#portfolio" class="nav-link">
+                        <i class="fas fa-briefcase"></i> Portfolio
+                    </a>
+                    <a href="index.html#team" class="nav-link">
+                        <i class="fas fa-users"></i> Team
+                    </a>
+                    <a href="#contact" class="nav-link">
+                        <i class="fas fa-envelope"></i> Contact
+                    </a>
+                    <div class="mobile-cta">
+                        <a href="#contact" class="btn btn-primary btn-block">Get Started Today</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</template>
+
+<!-- ========================================
+     BREADCRUMB COMPONENT
+     ======================================== -->
+<template id="breadcrumb-component">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li aria-current="page">[SERVICE_NAME]</li>
+            </ol>
+        </div>
+    </nav>
+</template>
+
+<!-- ========================================
+     SERVICE HERO COMPONENT
+     ======================================== -->
+<template id="service-hero-component">
+    <section id="home" class="hero service-hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="service-badge">
+                        <i class="[SERVICE_ICON]"></i>
+                        <span>[SERVICE_NAME]</span>
+                    </div>
+                    <h1 class="hero-title">[HERO_TITLE]</h1>
+                    <p class="hero-description">[HERO_DESCRIPTION]</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-white">[PRIMARY_CTA]</a>
+                        <a href="#overview" class="btn btn-outline">Learn More</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <strong>[STAT_1_VALUE]</strong>
+                            <span>[STAT_1_LABEL]</span>
+                        </div>
+                        <div class="stat">
+                            <strong>[STAT_2_VALUE]</strong>
+                            <span>[STAT_2_LABEL]</span>
+                        </div>
+                        <div class="stat">
+                            <strong>[STAT_3_VALUE]</strong>
+                            <span>[STAT_3_LABEL]</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
+
+<!-- ========================================
+     FOOTER COMPONENT
+     ======================================== -->
+<template id="footer-component">
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">Marqtron Media</h3>
+                    <p class="footer-description">
+                        Your partner for data-driven digital marketing solutions that deliver measurable results and sustainable growth.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/share/16iyjD1Whh/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://x.com/marqtron?t=kHpGfd2MoWbLc3KAugV6OQ&s=08" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X (Twitter)">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/marq_tron?igsh=dTR5OGcwMDh6c2lo" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/marqtron-media/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.threads.net/@marq_tron" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Threads">
+                            <i class="fab fa-threads"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#portfolio">Portfolio</a></li>
+                        <li><a href="index.html#team">Team</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="seo-services.html">SEO Services</a></li>
+                        <li><a href="social-media-marketing.html">Social Media Marketing</a></li>
+                        <li><a href="content-marketing.html">Content Marketing</a></li>
+                        <li><a href="web-design-development.html">Web Design & Development</a></li>
+                        <li><a href="digital-graphic-design.html">Digital Graphic Design</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Newsletter</h3>
+                    <p class="footer-description">
+                        Subscribe to our newsletter for the latest updates and insights.
+                    </p>
+                    <form class="newsletter-form">
+                        <div class="newsletter-input">
+                            <input type="email" name="newsletter_email" placeholder="Your email address" required>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </div>
+                    </form>
+                    <div class="payment-icons">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-paypal"></i>
+                        <i class="fab fa-cc-amex"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright">
+                        &copy; <span id="currentYear"></span> Marqtron Media. All rights reserved.
+                    </p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</template>
+
+<!-- ========================================
+     CTA SECTION COMPONENT
+     ======================================== -->
+<template id="cta-component">
+    <section class="cta">
+        <div class="cta-bg"></div>
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">[CTA_TITLE]</h2>
+                <p class="cta-description">[CTA_DESCRIPTION]</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-white">[PRIMARY_CTA]</a>
+                    <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
+
+<!-- ========================================
+     CONTACT FORM COMPONENT
+     ======================================== -->
+<template id="contact-component">
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">[CONTACT_TITLE]</h2>
+                <p class="section-description">[CONTACT_DESCRIPTION]</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-form-container">
+                    <h3 class="form-title">Send Us a Message</h3>
+                    <form class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" placeholder="John Smith" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Interest</label>
+                            <select id="service" name="service">
+                                <option value="">Please select a service</option>
+                                <option value="seo">SEO Services</option>
+                                <option value="content">Content Marketing</option>
+                                <option value="social">Social Media Marketing</option>
+                                <option value="web">Web Design & Development</option>
+                                <option value="design">Digital Graphic Design</option>
+                                <option value="consultation">Free Consultation</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell us about your project or goals..." required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="newsletter" value="yes">
+                                <span class="checkmark"></span>
+                                I'd like to receive marketing communications and can unsubscribe at any time.
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">[FORM_SUBMIT_TEXT]</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-info-card">
+                        <h3 class="info-title">Contact Information</h3>
+                        <div class="info-items">
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h4 class="info-label">Our Location</h4>
+                                    <p class="info-text">123 Digital Avenue, Tech District, New York, NY 10001</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h4 class="info-label">Email Us</h4>
+                                    <p class="info-text">info@marqtronmedia.com</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h4 class="info-label">Call Us</h4>
+                                    <p class="info-text">+1 (555) 123-4567</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="business-hours-card">
+                        <h3 class="hours-title">Business Hours</h3>
+                        <div class="hours-list">
+                            <div class="hours-item">
+                                <span class="day">Monday - Friday:</span>
+                                <span class="time">9:00 AM - 6:00 PM</span>
+                            </div>
+                            <div class="hours-item">
+                                <span class="day">Saturday:</span>
+                                <span class="time">10:00 AM - 4:00 PM</span>
+                            </div>
+                            <div class="hours-item">
+                                <span class="day">Sunday:</span>
+                                <span class="time">Closed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
+
+</body>
+</html> 
