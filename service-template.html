@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Dynamic Meta Tags (populated by JavaScript) -->
+    <title id="page-title">Service | Marqtron Media</title>
+    <meta name="description" id="page-description" content="">
+    <meta name="keywords" id="page-keywords" content="">
+    <meta name="author" content="Marqtron Media">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" id="page-canonical" href="">
+    
+    <!-- Dynamic Open Graph Tags -->
+    <meta property="og:type" content="service">
+    <meta property="og:url" id="og-url" content="">
+    <meta property="og:title" id="og-title" content="">
+    <meta property="og:description" id="og-description" content="">
+    <meta property="og:image" id="og-image" content="">
+    <meta property="og:site_name" content="Marqtron Media">
+    
+    <!-- Dynamic Twitter Tags -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" id="twitter-url" content="">
+    <meta property="twitter:title" id="twitter-title" content="">
+    <meta property="twitter:description" id="twitter-description" content="">
+    <meta property="twitter:image" id="twitter-image" content="">
+    
+    <!-- Consolidated Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="./styles.min.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    
+    <!-- Dynamic Schema (populated by JavaScript) -->
+    <script type="application/ld+json" id="service-schema"></script>
+</head>
+<body>
+    <!-- Header Component (loaded from components) -->
+    <div id="header-container"></div>
+    
+    <!-- Breadcrumb (dynamic) -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li aria-current="page" id="breadcrumb-service">Service</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Dynamic Hero Section -->
+    <section id="home" class="hero service-hero">
+        <div class="hero-bg" id="hero-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="service-badge">
+                        <i id="service-icon" class="fas fa-star"></i>
+                        <span id="service-name">Service</span>
+                    </div>
+                    <h1 class="hero-title" id="hero-title">Professional Service</h1>
+                    <p class="hero-description" id="hero-description">Service description will appear here.</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-white" id="primary-cta">Get Started</a>
+                        <a href="#overview" class="btn btn-outline">Learn Our Approach</a>
+                    </div>
+                    <div class="hero-stats" id="hero-stats">
+                        <!-- Dynamic stats will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic Main Content -->
+    <main id="main-content" class="main-content">
+        <!-- Content will be dynamically loaded based on service type -->
+    </main>
+
+    <!-- Contact Section (loaded from components) -->
+    <div id="contact-container"></div>
+    
+    <!-- Footer (loaded from components) -->
+    <div id="footer-container"></div>
+
+    <!-- Consolidated Scripts -->
+    <script src="./shared.js"></script>
+    <script src="./service-engine.js"></script>
+    <script src="./analytics.js"></script>
+    <script src="./sw.js"></script>
+    
+    <!-- Initialize Service Page -->
+    <script>
+        // Get service type from URL parameter or filename
+        const urlParams = new URLSearchParams(window.location.search);
+        const serviceType = urlParams.get('service') || getServiceFromPath();
+        
+        // Initialize the service page
+        if (typeof ServiceEngine !== 'undefined') {
+            ServiceEngine.init(serviceType);
+        }
+        
+        function getServiceFromPath() {
+            const path = window.location.pathname;
+            if (path.includes('seo')) return 'seo';
+            if (path.includes('content')) return 'content';
+            if (path.includes('social')) return 'social';
+            if (path.includes('web-design')) return 'web-design';
+            if (path.includes('design')) return 'design';
+            return 'seo'; // default
+        }
+    </script>
+</body>
+</html> 
