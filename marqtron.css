@@ -1794,3 +1794,631 @@ input:focus, select:focus, textarea:focus {
   position: relative;
   z-index: 1;
 }
+
+/* =================================================================
+   SERVICE PAGE LAYOUT VARIATIONS
+   ================================================================= */
+
+/* =================================================================
+   CONTENT MARKETING - MAGAZINE/EDITORIAL LAYOUT
+   ================================================================= */
+
+/* Apply magazine layout to content marketing page */
+body.content-marketing .service-hero {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    padding: 100px 0 80px;
+    position: relative;
+}
+
+body.content-marketing .service-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><path d="M200,200 Q400,50 600,200 T1000,200 L1000,1000 L0,1000 Z" fill="rgba(255,255,255,0.05)"/></svg>') no-repeat center;
+    background-size: cover;
+    pointer-events: none;
+}
+
+body.content-marketing .service-hero-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+body.content-marketing .service-hero-text h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+body.content-marketing .service-hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Magazine-style content sections */
+body.content-marketing .section:nth-child(even) {
+    background: #f8f9fa;
+}
+
+body.content-marketing .features-grid,
+body.content-marketing .why-choose-grid,
+body.content-marketing .approach-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+body.content-marketing .feature-card,
+body.content-marketing .why-choose-card,
+body.content-marketing .approach-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border-left: 5px solid var(--accent-color);
+    position: relative;
+}
+
+/* Magazine-style services breakdown */
+body.content-marketing .services-breakdown {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+body.content-marketing .breakdown-item {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+body.content-marketing .breakdown-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+}
+
+/* Photo placeholder for content marketing */
+body.content-marketing .service-hero-visual .hero-graphic {
+    width: 300px;
+    height: 400px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+body.content-marketing .service-hero-visual .hero-graphic::before {
+    content: '📝 Content Strategy Photo';
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+body.content-marketing .service-hero-visual .hero-graphic i {
+    font-size: 4rem;
+    color: rgba(255,255,255,0.3);
+}
+
+/* =================================================================
+   SOCIAL MEDIA SERVICES - SOCIAL FEED/TIMELINE LAYOUT
+   ================================================================= */
+
+/* Apply social feed layout to social media page */
+body.social-media .service-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 120px 0 100px;
+    position: relative;
+    overflow: hidden;
+}
+
+body.social-media .service-hero::before {
+    content: '💬 📱 🎯 ❤️ 📊 🚀';
+    position: absolute;
+    top: 50%;
+    left: -100px;
+    transform: translateY(-50%) rotate(-15deg);
+    font-size: 3rem;
+    opacity: 0.1;
+    white-space: nowrap;
+    animation: socialFloat 20s linear infinite;
+}
+
+@keyframes socialFloat {
+    0% { transform: translateY(-50%) translateX(-100px) rotate(-15deg); }
+    100% { transform: translateY(-50%) translateX(calc(100vw + 100px)) rotate(-15deg); }
+}
+
+body.social-media .service-hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+body.social-media .service-hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 40px 0;
+}
+
+body.social-media .stat-item {
+    background: rgba(255,255,255,0.15);
+    padding: 25px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Social feed style sections */
+body.social-media .features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+body.social-media .feature-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    border: 1px solid #e9ecef;
+    position: relative;
+    overflow: hidden;
+}
+
+body.social-media .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+/* Instagram-style services grid */
+body.social-media .services-breakdown {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+body.social-media .breakdown-item {
+    background: #ffffff;
+    border-radius: 25px;
+    padding: 35px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+body.social-media .breakdown-item:hover {
+    transform: translateY(-10px);
+}
+
+body.social-media .breakdown-item::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+}
+
+body.social-media .breakdown-item:hover::before {
+    animation: socialShine 0.6s ease-in-out;
+}
+
+@keyframes socialShine {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+/* Social media photo placeholders */
+body.social-media .service-hero-visual .hero-graphic {
+    width: 250px;
+    height: 250px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    position: relative;
+    backdrop-filter: blur(10px);
+    border: 3px solid rgba(255,255,255,0.3);
+}
+
+body.social-media .service-hero-visual .hero-graphic::before {
+    content: '📱 Social Media Campaign';
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255,255,255,0.9);
+    color: #333;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Timeline style process */
+body.social-media .process-timeline {
+    position: relative;
+}
+
+body.social-media .process-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #667eea, #764ba2);
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+body.social-media .process-step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+body.social-media .process-step:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+body.social-media .step-number {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: relative;
+    z-index: 2;
+    margin: 0 40px;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+body.social-media .step-content {
+    flex: 1;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    max-width: 400px;
+}
+
+/* =================================================================
+   WEB DESIGN SERVICES - PORTFOLIO SHOWCASE LAYOUT
+   ================================================================= */
+
+/* Apply portfolio layout to web design page */
+body.web-design .service-hero {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    padding: 150px 0 120px;
+    position: relative;
+    overflow: hidden;
+}
+
+body.web-design .service-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+}
+
+body.web-design .service-hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+body.web-design .service-hero-text h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    background: linear-gradient(135deg, #ffffff, #e0e7ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Portfolio showcase sections */
+body.web-design .features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+body.web-design .feature-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+body.web-design .feature-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+}
+
+body.web-design .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #1e3c72, #2a5298);
+}
+
+/* Case study style services breakdown */
+body.web-design .services-breakdown {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+}
+
+body.web-design .breakdown-item {
+    background: #ffffff;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+body.web-design .breakdown-item:hover {
+    transform: translateY(-10px);
+}
+
+body.web-design .breakdown-item .breakdown-icon {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+}
+
+body.web-design .breakdown-item .breakdown-icon::before {
+    content: '🖥️ Project Screenshot';
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 0.7rem;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 8px;
+    border-radius: 10px;
+}
+
+body.web-design .breakdown-item .breakdown-icon i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+body.web-design .breakdown-item h3,
+body.web-design .breakdown-item p,
+body.web-design .breakdown-item ul {
+    padding: 0 30px;
+}
+
+body.web-design .breakdown-item h3 {
+    padding-top: 25px;
+    margin-bottom: 15px;
+    color: #1e3c72;
+    font-weight: 700;
+}
+
+body.web-design .breakdown-item ul {
+    padding-bottom: 30px;
+}
+
+/* Portfolio hero visual */
+body.web-design .service-hero-visual .hero-graphic {
+    width: 400px;
+    height: 300px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.2);
+    overflow: hidden;
+}
+
+body.web-design .service-hero-visual .hero-graphic::before {
+    content: '💻 Website Portfolio Gallery';
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+body.web-design .service-hero-visual .hero-graphic::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    height: 60%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+body.web-design .service-hero-visual .hero-graphic i {
+    font-size: 4rem;
+    color: rgba(255,255,255,0.4);
+    z-index: 1;
+    position: relative;
+}
+
+/* Before/After style why choose us */
+body.web-design .why-choose-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+body.web-design .why-choose-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    position: relative;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+body.web-design .why-choose-card:hover {
+    box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+    transform: translateY(-5px);
+}
+
+body.web-design .why-choose-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    border-radius: 22px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+body.web-design .why-choose-card:hover::before {
+    opacity: 1;
+}
+
+/* Mobile Responsiveness for New Layouts */
+@media (max-width: 768px) {
+    /* Content Marketing Mobile */
+    body.content-marketing .service-hero-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    body.content-marketing .features-grid,
+    body.content-marketing .why-choose-grid,
+    body.content-marketing .approach-grid,
+    body.content-marketing .services-breakdown {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    body.content-marketing .service-hero-text h1 {
+        font-size: 2.5rem;
+    }
+    
+    /* Social Media Mobile */
+    body.social-media .service-hero-stats {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    
+    body.social-media .services-breakdown {
+        grid-template-columns: 1fr;
+    }
+    
+    body.social-media .process-step {
+        flex-direction: column !important;
+        text-align: center;
+    }
+    
+    body.social-media .step-number {
+        margin: 0 0 20px 0;
+    }
+    
+    body.social-media .process-timeline::before {
+        display: none;
+    }
+    
+    /* Web Design Mobile */
+    body.web-design .service-hero-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+    }
+    
+    body.web-design .service-hero-text h1 {
+        font-size: 2.8rem;
+    }
+    
+    body.web-design .features-grid,
+    body.web-design .why-choose-grid,
+    body.web-design .services-breakdown {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    body.web-design .service-hero-visual .hero-graphic {
+        width: 300px;
+        height: 200px;
+    }
+}
