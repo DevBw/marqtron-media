@@ -155,6 +155,9 @@ img {
 
 .section {
   padding: var(--space-16) 0;
+  position: relative;
+  z-index: 2;
+  background: var(--bg-primary);
 }
 
 .section-header {
@@ -179,6 +182,10 @@ img {
   background-color: var(--bg-light);
 }
 
+.section.bg-light {
+  background: var(--bg-light);
+}
+
 /* ========================================
    HEADER
    ======================================== */
@@ -190,7 +197,7 @@ img {
   background: rgba(255,255,255,0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-light);
-  z-index: var(--z-sticky);
+  z-index: 1000;
   transition: var(--transition);
 }
 
@@ -282,65 +289,134 @@ img {
    HERO SECTION
    ======================================== */
 .hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  position: relative;
-  color: var(--text-white);
-  text-align: center;
-  padding-top: 80px;
-  overflow: hidden;
-  /* Fallback background if video doesn't load */
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: var(--text-white);
+    text-align: center;
+    padding-top: 80px;
+    overflow: hidden;
+    /* Fallback background if video doesn't load */
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
 }
 
 .hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -2;
 }
 
 .hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(199, 179, 69, 0.6) 0%, rgba(44, 62, 80, 0.6) 100%);
-  z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, rgba(199, 179, 69, 0.6) 0%, rgba(44, 62, 80, 0.6) 100%);
+    z-index: -1;
 }
 
 .hero .container {
-  position: relative;
-  z-index: 3;
+    position: relative;
+    z-index: 3;
 }
 
 .hero-content {
-  max-width: 800px;
-  margin: 0 auto;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .hero-title {
-  font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
-  font-weight: var(--font-bold);
-  margin-bottom: var(--space-6);
+    font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
+    font-weight: var(--font-bold);
+    margin-bottom: var(--space-6);
 }
 
 .hero-description {
-  font-size: var(--text-xl);
-  margin-bottom: var(--space-8);
-  opacity: 0.95;
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-8);
+    opacity: 0.95;
 }
 
 .hero-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-4);
-  justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    justify-content: center;
+}
+
+/* Ensure all sections after hero flow over the fixed video */
+
+/* Hero visual positioning for photo placeholder */
+.hero-visual {
+    position: absolute;
+    top: 50%;
+    right: var(--space-8);
+    transform: translateY(-50%);
+    z-index: 3;
+}
+
+.hero-image-placeholder {
+    width: 200px;
+    height: 300px;
+    background: rgba(255,255,255,0.1);
+    border: 2px dashed rgba(255,255,255,0.3);
+    backdrop-filter: blur(10px);
+}
+
+.hero-image-placeholder i {
+    font-size: var(--text-4xl);
+    color: rgba(255,255,255,0.6);
+    margin-bottom: var(--space-4);
+    transition: var(--transition);
+}
+
+/* Mobile responsiveness for fixed video effect */
+@media (max-width: 768px) {
+    .hero-visual {
+        position: static;
+        transform: none;
+        margin-top: var(--space-8);
+        text-align: center;
+    }
+    
+    .hero-image-placeholder {
+        width: 250px;
+        height: 200px;
+        margin: 0 auto;
+    }
+    
+    /* Ensure mobile video still covers properly */
+    .hero-video {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+    }
+    
+    .hero-overlay {
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+/* Add subtle parallax effect on desktop */
+@media (min-width: 769px) {
+    .hero-video {
+        transform: translateZ(0);
+        will-change: transform;
+    }
+}
+
+/* Ensure smooth scrolling performance */
+.hero-video,
+.hero-overlay {
+    backface-visibility: hidden;
+    perspective: 1000px;
 }
 
 /* ========================================
@@ -1092,6 +1168,8 @@ input:focus, select:focus, textarea:focus {
   background: var(--bg-dark);
   color: var(--text-white);
   padding: var(--space-16) 0 var(--space-8);
+  position: relative;
+  z-index: 2;
 }
 
 .footer-content {
