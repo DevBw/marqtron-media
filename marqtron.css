@@ -2422,3 +2422,473 @@ body.web-design .why-choose-card:hover::before {
         height: 200px;
     }
 }
+
+/* =================================================================
+   WELCOMING LAYOUT IMPROVEMENTS & FIXES
+   ================================================================= */
+
+/* Fix CTA section visibility issues */
+.cta-content h2 {
+    color: var(--text-white) !important;
+    opacity: 1 !important;
+    font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+    font-weight: var(--font-bold);
+    margin-bottom: var(--space-4);
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.cta-content > p {
+    color: var(--text-white) !important;
+    opacity: 1 !important;
+    font-size: var(--text-lg);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-8);
+    text-shadow: 0 1px 5px rgba(0,0,0,0.2);
+}
+
+/* Make layouts more welcoming - reduce grid density */
+.features-grid {
+    display: block;
+    margin-top: var(--space-12);
+}
+
+.feature-card {
+    margin-bottom: var(--space-8);
+    padding: var(--space-8);
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    border-left: 4px solid var(--primary-color);
+}
+
+.feature-card:hover {
+    transform: translateX(10px);
+    box-shadow: var(--shadow-lg);
+}
+
+@media (min-width: 768px) {
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-8);
+    }
+    
+    .feature-card:hover {
+        transform: translateY(-5px);
+    }
+}
+
+/* Improve services breakdown to be more conversational */
+.services-breakdown {
+    display: block;
+    margin-top: var(--space-12);
+}
+
+.breakdown-item {
+    margin-bottom: var(--space-12);
+    background: var(--bg-primary);
+    padding: var(--space-8);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.breakdown-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+}
+
+.breakdown-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+@media (min-width: 768px) {
+    .services-breakdown {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-8);
+    }
+}
+
+@media (min-width: 1024px) {
+    .services-breakdown {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Fix social media process layout */
+body.social-media .process-timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+body.social-media .process-timeline::before {
+    content: '';
+    position: absolute;
+    left: var(--space-8);
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+    border-radius: 1px;
+}
+
+body.social-media .process-step {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: var(--space-12);
+    position: relative;
+    padding-left: var(--space-20);
+}
+
+body.social-media .step-number {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--text-white);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--font-bold);
+    font-size: var(--text-base);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    box-shadow: var(--shadow-md);
+}
+
+body.social-media .step-content {
+    flex: 1;
+    background: var(--bg-primary);
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    margin-left: var(--space-4);
+}
+
+/* Fix mobile responsiveness */
+@media (max-width: 768px) {
+    /* Remove grid layouts on mobile for better UX */
+    .features-grid,
+    .why-choose-grid,
+    .approach-grid,
+    .services-breakdown {
+        display: block !important;
+    }
+    
+    .feature-card,
+    .why-choose-card,
+    .approach-card,
+    .breakdown-item {
+        margin-bottom: var(--space-6);
+        width: 100%;
+    }
+    
+    /* Fix social media mobile layout */
+    body.social-media .process-timeline::before {
+        left: var(--space-4);
+    }
+    
+    body.social-media .process-step {
+        padding-left: var(--space-16);
+        margin-bottom: var(--space-8);
+    }
+    
+    body.social-media .step-number {
+        width: 32px;
+        height: 32px;
+        font-size: var(--text-sm);
+    }
+    
+    body.social-media .step-content {
+        margin-left: var(--space-2);
+        padding: var(--space-4);
+    }
+    
+    /* Fix content marketing mobile */
+    body.content-marketing .service-hero-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+        text-align: center;
+    }
+    
+    body.content-marketing .service-hero-text h1 {
+        font-size: clamp(var(--text-2xl), 8vw, var(--text-3xl));
+    }
+    
+    /* Fix web design mobile */
+    body.web-design .service-hero-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+        text-align: center;
+    }
+    
+    body.web-design .service-hero-text h1 {
+        font-size: clamp(var(--text-2xl), 8vw, var(--text-3xl));
+    }
+    
+    body.web-design .service-hero-visual .hero-graphic {
+        width: 280px;
+        height: 180px;
+    }
+}
+
+/* =================================================================
+   IMPROVED CONTENT MARKETING LAYOUT
+   ================================================================= */
+
+body.content-marketing .features-grid,
+body.content-marketing .why-choose-grid,
+body.content-marketing .approach-grid {
+    display: block;
+}
+
+body.content-marketing .feature-card,
+body.content-marketing .why-choose-card,
+body.content-marketing .approach-card {
+    background: var(--bg-primary);
+    padding: var(--space-8);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    border-left: 5px solid var(--accent-color);
+    margin-bottom: var(--space-8);
+    position: relative;
+}
+
+body.content-marketing .feature-card:hover,
+body.content-marketing .why-choose-card:hover,
+body.content-marketing .approach-card:hover {
+    transform: translateX(10px);
+    box-shadow: var(--shadow-lg);
+}
+
+@media (min-width: 768px) {
+    body.content-marketing .features-grid,
+    body.content-marketing .why-choose-grid,
+    body.content-marketing .approach-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-8);
+    }
+    
+    body.content-marketing .feature-card:hover,
+    body.content-marketing .why-choose-card:hover,
+    body.content-marketing .approach-card:hover {
+        transform: translateY(-5px);
+    }
+}
+
+/* Magazine-style services breakdown */
+body.content-marketing .services-breakdown {
+    display: block;
+}
+
+body.content-marketing .breakdown-item {
+    background: var(--bg-primary);
+    padding: var(--space-8);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    margin-bottom: var(--space-12);
+    position: relative;
+    overflow: hidden;
+}
+
+body.content-marketing .breakdown-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+}
+
+@media (min-width: 768px) {
+    body.content-marketing .services-breakdown {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-12);
+    }
+}
+
+/* =================================================================
+   IMPROVED SOCIAL MEDIA LAYOUT
+   ================================================================= */
+
+/* Make social feed less grid-heavy */
+body.social-media .features-grid {
+    display: block;
+}
+
+body.social-media .feature-card {
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--primary-color);
+    margin-bottom: var(--space-8);
+    position: relative;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    body.social-media .features-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-8);
+    }
+}
+
+/* Instagram-style services grid - make it less overwhelming */
+body.social-media .services-breakdown {
+    display: block;
+}
+
+body.social-media .breakdown-item {
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    box-shadow: var(--shadow);
+    text-align: left;
+    margin-bottom: var(--space-8);
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+body.social-media .breakdown-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+@media (min-width: 768px) {
+    body.social-media .services-breakdown {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-8);
+    }
+}
+
+@media (min-width: 1024px) {
+    body.social-media .services-breakdown {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* =================================================================
+   IMPROVED WEB DESIGN LAYOUT
+   ================================================================= */
+
+/* Make portfolio layout less grid-heavy */
+body.web-design .features-grid {
+    display: block;
+}
+
+body.web-design .feature-card {
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: var(--space-8);
+    transition: var(--transition);
+    border-top: 6px solid var(--primary-color);
+}
+
+body.web-design .feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+@media (min-width: 768px) {
+    body.web-design .features-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-8);
+    }
+}
+
+/* Case study style services breakdown */
+body.web-design .services-breakdown {
+    display: block;
+}
+
+body.web-design .breakdown-item {
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    margin-bottom: var(--space-12);
+    transition: var(--transition);
+}
+
+body.web-design .breakdown-item:hover {
+    transform: translateY(-5px);
+}
+
+body.web-design .breakdown-item .breakdown-icon {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--text-white);
+    padding: var(--space-8);
+    text-align: center;
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    body.web-design .services-breakdown {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-12);
+    }
+}
+
+/* Better why choose us sections for all layouts */
+.why-choose-grid {
+    display: block;
+    margin-top: var(--space-12);
+}
+
+.why-choose-card {
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    box-shadow: var(--shadow);
+    margin-bottom: var(--space-8);
+    text-align: center;
+    position: relative;
+    border: 2px solid transparent;
+    transition: var(--transition);
+}
+
+.why-choose-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+}
+
+@media (min-width: 768px) {
+    .why-choose-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-8);
+    }
+}
+
+@media (min-width: 1024px) {
+    .why-choose-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
