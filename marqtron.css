@@ -104,7 +104,10 @@ body {
   font-size: var(--text-base);
   line-height: var(--leading-normal);
   color: var(--text-primary);
-  background-color: var(--bg-primary);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  min-height: 100vh;
+  /* Ensure video can show through */
+  position: relative;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -157,7 +160,7 @@ img {
   padding: var(--space-16) 0;
   position: relative;
   z-index: 2;
-  background: var(--bg-primary);
+  background: transparent;
 }
 
 .section-header {
@@ -179,11 +182,13 @@ img {
 }
 
 .bg-light {
-  background-color: var(--bg-light);
+  background-color: rgba(247, 250, 252, 0.95);
+  backdrop-filter: blur(10px);
 }
 
 .section.bg-light {
-  background: var(--bg-light);
+  background: rgba(247, 250, 252, 0.95);
+  backdrop-filter: blur(10px);
 }
 
 /* ========================================
@@ -298,7 +303,7 @@ img {
     padding-top: 80px;
     overflow: hidden;
     /* Fallback background if video doesn't load */
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: transparent;
 }
 
 .hero-video {
@@ -309,6 +314,7 @@ img {
     height: 100vh;
     object-fit: cover;
     z-index: -2;
+    pointer-events: none;
 }
 
 .hero-overlay {
@@ -319,6 +325,7 @@ img {
     height: 100vh;
     background: linear-gradient(135deg, rgba(199, 179, 69, 0.6) 0%, rgba(44, 62, 80, 0.6) 100%);
     z-index: -1;
+    pointer-events: none;
 }
 
 .hero .container {
@@ -351,6 +358,16 @@ img {
 }
 
 /* Ensure all sections after hero flow over the fixed video */
+.section {
+  position: relative;
+  z-index: 2;
+}
+
+/* Add subtle background to sections for better text readability */
+.section:not(.bg-light):not(.cta-section):not(.footer) {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(5px);
+}
 
 /* Hero visual positioning for photo placeholder */
 .hero-visual {
@@ -1091,7 +1108,8 @@ img {
 }
 
 .contact-form-container {
-  background: var(--bg-primary);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
   border-radius: var(--radius-lg);
   padding: var(--space-8);
   box-shadow: var(--shadow);
@@ -1135,7 +1153,8 @@ input:focus, select:focus, textarea:focus {
 }
 
 .contact-info {
-  background: var(--bg-primary);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
   border-radius: var(--radius-lg);
   padding: var(--space-8);
   box-shadow: var(--shadow);
